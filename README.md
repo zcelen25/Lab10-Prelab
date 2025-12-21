@@ -1,4 +1,7 @@
-# COMP100 Lab 9: Object Oriented Programming - Prelab
+# COMP100 Lab 10: Object Oriented Programming - Prelab
+
+This Prelab focuses on Object Oriented Programming in Python, particulary implementation of Stack and Queeue classes. To understand how their operations work, you may check this website for better understanding: https://visualgo.net/en/list
+
 
 ## Question 1: Implementing a Stack Class
 
