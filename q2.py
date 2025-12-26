@@ -3,12 +3,8 @@ class Queue:
         """
         Initializes an empty queue.
         """
-        # Start code here
-
-        pass
-
-        # End code here
-
+        self.items = []
+        
     def isEmpty(self) -> bool:
         """
         Checks if the queue is empty.
@@ -16,11 +12,7 @@ class Queue:
         Returns:
             bool: True if the queue is empty, False otherwise.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        return len(self.items) == 0
 
     def enqueue(self, item: int) -> None:
         """
@@ -29,11 +21,7 @@ class Queue:
         Parameters:
             item (int): The item to be added to the queue.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        self.items.append(item)
 
     def dequeue(self) -> int:
         """
@@ -45,11 +33,10 @@ class Queue:
         Raises:
             IndexError: If the queue is empty.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        if self.isEmpty():
+            raise IndexError("dequeue from empty queue")
+        # Front of queue is at index 0
+        return self.items.pop(0)
 
     def peek(self) -> int:
         """
@@ -61,11 +48,9 @@ class Queue:
         Raises:
             IndexError: If the queue is empty.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        if self.isEmpty():
+            raise KeyError
+        return self.items[0]
 
     def __len__(self) -> int:
         """
@@ -74,11 +59,7 @@ class Queue:
         Returns:
             int: The number of items in the queue.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        return len(self.items)
 
     def __str__(self) -> str:
         """
@@ -87,8 +68,8 @@ class Queue:
         Returns:
             str: The string representation of the queue.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        if self.isEmpty():
+            return "[]"
+        # items[0] is front, items[-1] is rear
+        content = ", ".join(str(x) for x in self.items)
+        return "Front of queue -> " + content + " <- Rear of queue"

@@ -3,11 +3,7 @@ class Stack:
         """
         Initializes an empty stack.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        self.items = []
 
     def isEmpty(self) -> bool:
         """
@@ -15,11 +11,7 @@ class Stack:
         Returns:
             bool: True if the stack is empty, False otherwise.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        return len(self.items) == 0
 
     def push(self, item: int) -> None:
         """
@@ -27,11 +19,7 @@ class Stack:
         Parameters:
             item: The item to be added to the stack.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        self.items.append(item)
 
     def pop(self) -> int:
         """
@@ -41,11 +29,9 @@ class Stack:
         Raises:
             IndexError: If the stack is empty.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        if self.isEmpty():
+            raise IndexError("pop from empty stack")
+        return self.items.pop()
 
     def peek(self) -> int:
         """
@@ -55,11 +41,9 @@ class Stack:
         Raises:
             IndexError: If the stack is empty.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        if self.isEmpty():
+            raise IndexError("peek from empty stack")
+        return self.items[-1]
 
     def __len__(self) -> int:
         """
@@ -67,11 +51,7 @@ class Stack:
         Returns:
             int: The number of items in the stack.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        return len(self.items)
 
     def __str__(self) -> str:
         """
@@ -79,8 +59,8 @@ class Stack:
         Returns:
             str: The string representation of the stack.
         """
-        # Start code here
-
-        pass
-
-        # End code here
+        if self.isEmpty():
+            return "[]"
+        # items[0] is bottom, items[-1] is top
+        content = ", ".join(str(x) for x in self.items)
+        return "[" + content + " <- top of stack"
